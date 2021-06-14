@@ -20,7 +20,7 @@ You must have allocated enough memory, otherwise the compilation, unfortunately,
 # if not, enlarge your swap space as explained in the guide
 $ free -m
 
-$ wget https://github.com/Qengineering/Install-OpenCV-Raspberry-Pi-64-bits/raw/main/OpenCV-4-5-x.sh
+$ wget https://github.com/Qengineering/Install-OpenCV-Raspberry-Pi-32-bits/raw/main/OpenCV-4-5-x.sh
 $ sudo chmod 755 ./OpenCV-4-5-x.sh
 $ ./OpenCV-4-5-x.sh
 ```
