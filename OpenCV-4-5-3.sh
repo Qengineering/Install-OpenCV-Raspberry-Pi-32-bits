@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Installing OpenCV 4.5.2 on your Raspberry Pi 32-bit OS"
+echo "Installing OpenCV 4.5.3 on your Raspberry Pi 32-bit OS"
 echo "It will take minimal 1.5 hour !"
 cd ~
 # install the dependencies
@@ -18,15 +18,15 @@ sudo apt-get install -y protobuf-compiler
 
 # download the latest version
 cd ~ 
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.2.zip 
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.2.zip 
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.3.zip 
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.3.zip 
 
 # unpack
 unzip opencv.zip 
 unzip opencv_contrib.zip 
 # some administration to make live easier later on
-mv opencv-4.5.2 opencv
-mv opencv_contrib-4.5.2 opencv_contrib
+mv opencv-4.5.3 opencv
+mv opencv_contrib-4.5.3 opencv_contrib
 # clean up the zip files
 rm opencv.zip
 rm opencv_contrib.zip
