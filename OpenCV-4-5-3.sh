@@ -9,6 +9,7 @@ sudo apt-get install -y libjpeg-dev libtiff-dev libpng-dev
 sudo apt-get install -y libavcodec-dev libavformat-dev libswscale-dev
 sudo apt-get install -y libgtk2.0-dev libcanberra-gtk* libgtk-3-dev
 sudo apt-get install -y libxvidcore-dev libx264-dev
+sudo apt-get install -y python-dev python-numpy python-pip
 sudo apt-get install -y python3-dev python3-numpy python3-pip
 sudo apt-get install -y libtbb2 libtbb-dev libdc1394-22-dev
 sudo apt-get install -y libv4l-dev v4l-utils
