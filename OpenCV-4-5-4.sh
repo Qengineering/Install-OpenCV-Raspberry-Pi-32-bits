@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
-echo "Installing OpenCV 4.5.5 on your Raspberry Pi 32-bit OS"
-echo "It will take minimal 2.0 hour !"
+echo "Installing OpenCV 4.5.4 on your Raspberry Pi 32-bit OS"
+echo "It will take minimal 1.5 hour !"
 cd ~
 if [ -f /etc/os-release ]; then
     # freedesktop.org and systemd
@@ -33,15 +33,15 @@ sudo apt-get install -y protobuf-compiler
 cd ~ 
 sudo rm -rf opencv*
 # download OpenCV
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.5.zip 
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.5.zip 
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.4.zip 
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.4.zip 
 
 # unpack
 unzip opencv.zip 
 unzip opencv_contrib.zip 
 # some administration to make live easier later on
-mv opencv-4.5.5 opencv
-mv opencv_contrib-4.5.5 opencv_contrib
+mv opencv-4.5.4 opencv
+mv opencv_contrib-4.5.4 opencv_contrib
 # clean up the zip files
 rm opencv.zip
 rm opencv_contrib.zip
@@ -74,7 +74,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_ENABLE_NONFREE=ON \
 -D INSTALL_C_EXAMPLES=OFF \
 -D INSTALL_PYTHON_EXAMPLES=OFF \
--D PYTHON3 PACKAGES PATH=/usr/lib/python3/dist-packages \
 -D OPENCV_GENERATE_PKGCONFIG=ON \
 -D BUILD_EXAMPLES=OFF ..
 
@@ -88,4 +87,4 @@ make clean
 sudo apt-get update
 
 echo "Congratulations!"
-echo "You've successfully installed OpenCV 4.5.5 on your Raspberry Pi 32-bit OS"
+echo "You've successfully installed OpenCV 4.5.4 on your Raspberry Pi 32-bit OS"
