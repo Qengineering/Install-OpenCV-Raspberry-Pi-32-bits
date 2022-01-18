@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-echo "Installing OpenCV 4.5.5 on your Raspberry Pi 64-bit OS"
+echo "Installing OpenCV 4.5.5 on your Raspberry Pi 32-bit OS"
 echo "It will take minimal 2.0 hour !"
 cd ~
 # install the dependencies
@@ -74,4 +74,4 @@ make clean
 sudo apt-get update
 
 echo "Congratulations!"
-echo "You've successfully installed OpenCV 4.5.5 on your Raspberry Pi 64-bit OS"
+echo "You've successfully installed OpenCV 4.5.5 on your Raspberry Pi 32-bit OS"
