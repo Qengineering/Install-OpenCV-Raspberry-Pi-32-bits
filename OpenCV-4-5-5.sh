@@ -1,6 +1,21 @@
 #!/bin/bash
 set -e
-echo "Installing OpenCV 4.5.5 on your Raspberry Pi 32-bit OS"
+install_opencv () {
+echo ""
+case `cat /etc/debian_version` in
+10*) echo "Detecting Debian 10, Buster. "
+	;;
+11*) echo "Detecting Debian 11, Bullseye. "
+	;;
+12*) echo "Detecting Debian 12, Bookworm. "
+     echo "You have a 64-bit OS."
+     echo "This installation is used for 32-bit versions."
+     echo "Leaving without installing OpenCV"
+     return 0
+	;;
+esac
+echo ""
+echo "Installing OpenCV 4.5.5"
 echo "It will take minimal 2.0 hour !"
 cd ~
 # install the dependencies
@@ -11,6 +26,15 @@ sudo apt-get install -y libgtk2.0-dev libcanberra-gtk* libgtk-3-dev
 sudo apt-get install -y libgstreamer1.0-dev gstreamer1.0-gtk3
 sudo apt-get install -y libgstreamer-plugins-base1.0-dev gstreamer1.0-gl
 sudo apt-get install -y libxvidcore-dev libx264-dev
+#get python
+case `cat /etc/debian_version` in
+10*) sudo apt-get install -y python-dev python-numpy python-pip
+	;;
+11*)
+	;;
+12*)
+	;;
+esac
 sudo apt-get install -y python3-dev python3-numpy python3-pip
 sudo apt-get install -y libtbb2 libtbb-dev libdc1394-22-dev
 sudo apt-get install -y libv4l-dev v4l-utils
@@ -76,3 +100,24 @@ sudo apt-get update
 
 echo "Congratulations!"
 echo "You've successfully installed OpenCV 4.5.5 on your Raspberry Pi 32-bit OS"
+}
+
+cd ~
+if [ -d ~/opencv/build ]; then
+  echo " "
+  echo "You have a directory ~/opencv/build on your disk."
+  echo "Continuing the installation will replace this folder."
+  echo " "
+  
+  printf "Do you wish to continue (Y/n)?"
+  read answer
+
+  if [ "$answer" != "${answer#[Nn]}" ] ;then 
+      echo "Leaving without installing OpenCV"
+  else
+      install_opencv
+  fi
+else
+    install_opencv
+fi
+
