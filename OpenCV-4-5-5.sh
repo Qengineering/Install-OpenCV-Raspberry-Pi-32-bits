@@ -8,10 +8,6 @@ case `cat /etc/debian_version` in
 11*) echo "Detecting Debian 11, Bullseye. "
 	;;
 12*) echo "Detecting Debian 12, Bookworm. "
-     echo "You have a 64-bit OS."
-     echo "This installation is used for 32-bit versions."
-     echo "Leaving without installing OpenCV"
-     return 0
 	;;
 esac
 echo ""
