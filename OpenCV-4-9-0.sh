@@ -11,7 +11,7 @@ case `cat /etc/debian_version` in
 	;;
 esac
 echo ""
-echo "Installing OpenCV 4.8.0 on your Raspberry Pi 32-bit OS"
+echo "Installing OpenCV 4.9.0 on your Raspberry Pi 32-bit OS"
 echo "It will take minimal 2.5 hour !"
 cd ~
 # install the dependencies
