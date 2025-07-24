@@ -11,7 +11,7 @@ case `cat /etc/debian_version` in
 	;;
 esac
 echo ""
-echo "Installing OpenCV 4.11.0 on your Raspberry Pi 32-bit OS"
+echo "Installing OpenCV 4.13.0 on your Raspberry Pi 32-bit OS"
 echo "It will take minimal 2.5 hour !"
 cd ~
 # install the dependencies
@@ -39,25 +39,11 @@ sudo apt-get install -y liblapack-dev gfortran libhdf5-dev
 sudo apt-get install -y libprotobuf-dev libgoogle-glog-dev libgflags-dev
 sudo apt-get install -y protobuf-compiler
 
-# remove old versions or previous builds
+# download the latest version
 cd ~ 
 sudo rm -rf opencv*
-
-# download the 4.11.0 version
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.11.0.zip 
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.11.0.zip 
-
-# unpack
-unzip opencv.zip 
-unzip opencv_contrib.zip 
-
-# Some administration to make life easier later on
-mv opencv-4.11.0 opencv
-mv opencv_contrib-4.11.0 opencv_contrib
-
-# clean up the zip files
-rm opencv.zip
-rm opencv_contrib.zip
+git clone --depth=1 https://github.com/opencv/opencv.git
+git clone --depth=1 https://github.com/opencv/opencv_contrib.git
 
 # set install dir
 cd ~/opencv
@@ -101,7 +87,7 @@ make clean
 sudo apt-get update
 
 echo "Congratulations!"
-echo "You've successfully installed OpenCV 4.11.0 on your Raspberry Pi 32-bit OS"
+echo "You've successfully installed OpenCV 4.13.0 on your Raspberry Pi 32-bit OS"
 }
 
 cd ~
